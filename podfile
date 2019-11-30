@@ -1,0 +1,4 @@
+target 'ItauChallenge' do
+  pod 'GooglePlaces'
+  pod 'GoogleMaps'
+end

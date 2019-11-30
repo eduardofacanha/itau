@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E120DEC23930C3F00A3EA53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E120DEB23930C3F00A3EA53 /* Constants.swift */; };
 		3E2BDA30239309A200C10485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA2F239309A200C10485 /* AppDelegate.swift */; };
 		3E2BDA32239309A200C10485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA31239309A200C10485 /* SceneDelegate.swift */; };
 		3E2BDA34239309A200C10485 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA33239309A200C10485 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		3E2BDA3F239309A700C10485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2BDA3D239309A700C10485 /* LaunchScreen.storyboard */; };
 		3E2BDA4A239309A800C10485 /* ItauChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA49239309A800C10485 /* ItauChallengeTests.swift */; };
 		3E2BDA55239309A800C10485 /* ItauChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA54239309A800C10485 /* ItauChallengeUITests.swift */; };
+		CEF93D2A2B193F4E6A748814 /* libPods-ItauChallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2BAE9E045A904586428515 /* libPods-ItauChallenge.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E120DEB23930C3F00A3EA53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3E2BDA2C239309A200C10485 /* ItauChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItauChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2BDA2F239309A200C10485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E2BDA31239309A200C10485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +54,9 @@
 		3E2BDA50239309A800C10485 /* ItauChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItauChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2BDA54239309A800C10485 /* ItauChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItauChallengeUITests.swift; sourceTree = "<group>"; };
 		3E2BDA56239309A800C10485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CFF5BF9CE8BFB9BD6B5ECB9 /* Pods-ItauChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItauChallenge.release.xcconfig"; path = "Target Support Files/Pods-ItauChallenge/Pods-ItauChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		5B2BAE9E045A904586428515 /* libPods-ItauChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ItauChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E111503A35BFEA21CE868EEC /* Pods-ItauChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItauChallenge.debug.xcconfig"; path = "Target Support Files/Pods-ItauChallenge/Pods-ItauChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF93D2A2B193F4E6A748814 /* libPods-ItauChallenge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +92,8 @@
 				3E2BDA48239309A800C10485 /* ItauChallengeTests */,
 				3E2BDA53239309A800C10485 /* ItauChallengeUITests */,
 				3E2BDA2D239309A200C10485 /* Products */,
+				D152C41D78D07020FB27421A /* Pods */,
+				82A7EF020F142B42622D0D50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +117,7 @@
 				3E2BDA3B239309A700C10485 /* Assets.xcassets */,
 				3E2BDA3D239309A700C10485 /* LaunchScreen.storyboard */,
 				3E2BDA40239309A700C10485 /* Info.plist */,
+				3E120DEB23930C3F00A3EA53 /* Constants.swift */,
 				3E2BDA38239309A200C10485 /* ItauChallenge.xcdatamodeld */,
 			);
 			path = ItauChallenge;
@@ -131,6 +141,23 @@
 			path = ItauChallengeUITests;
 			sourceTree = "<group>";
 		};
+		82A7EF020F142B42622D0D50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B2BAE9E045A904586428515 /* libPods-ItauChallenge.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D152C41D78D07020FB27421A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E111503A35BFEA21CE868EEC /* Pods-ItauChallenge.debug.xcconfig */,
+				4CFF5BF9CE8BFB9BD6B5ECB9 /* Pods-ItauChallenge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E2BDA59239309A800C10485 /* Build configuration list for PBXNativeTarget "ItauChallenge" */;
 			buildPhases = (
+				F03B54409FBC720C6C87022C /* [CP] Check Pods Manifest.lock */,
 				3E2BDA28239309A200C10485 /* Sources */,
 				3E2BDA29239309A200C10485 /* Frameworks */,
 				3E2BDA2A239309A200C10485 /* Resources */,
+				1C6C4575C872950812CCC61A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,11 +286,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C6C4575C872950812CCC61A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ItauChallenge/Pods-ItauChallenge-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ItauChallenge/Pods-ItauChallenge-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ItauChallenge/Pods-ItauChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F03B54409FBC720C6C87022C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ItauChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E2BDA28239309A200C10485 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E120DEC23930C3F00A3EA53 /* Constants.swift in Sources */,
 				3E2BDA3A239309A200C10485 /* ItauChallenge.xcdatamodeld in Sources */,
 				3E2BDA34239309A200C10485 /* ViewController.swift in Sources */,
 				3E2BDA30239309A200C10485 /* AppDelegate.swift in Sources */,
@@ -436,6 +508,7 @@
 		};
 		3E2BDA5A239309A800C10485 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E111503A35BFEA21CE868EEC /* Pods-ItauChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +527,7 @@
 		};
 		3E2BDA5B239309A800C10485 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CFF5BF9CE8BFB9BD6B5ECB9 /* Pods-ItauChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
