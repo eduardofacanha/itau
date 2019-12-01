@@ -15,16 +15,27 @@ struct GooglePlacesResponse : Codable {
   }
 }
 struct GooglePlaceDetailsResponse : Codable {
-  let result: PhoneNumber
+  let result: Details
   enum CodingKeys: CodingKey {
     case result
   }
-}
-
-struct PhoneNumber: Codable {
-  let phoneNumber: String
-  enum CodingKeys: String, CodingKey {
-    case phoneNumber = "formatted_phone_number"
+  
+  struct Details: Codable {
+    let openingHours: OpeningHours?
+    let phoneNumber: String?
+    
+    enum CodingKeys: String, CodingKey {
+      case phoneNumber = "formatted_phone_number"
+      case openingHours = "opening_hours"
+    }
+    
+    struct OpeningHours: Codable {
+      let weekday: [String]?
+      
+      enum CodingKeys: String, CodingKey {
+        case weekday = "weekday_text"
+      }
+    }
   }
 }
 
@@ -32,14 +43,10 @@ struct Place: Codable {
   let geometry: Location
   let placeID: String
   let name: String
-  let openingHours: OpenNow?
-  let address: String
   enum CodingKeys: String, CodingKey {
     case geometry = "geometry"
     case placeID = "place_id"
     case name = "name"
-    case openingHours = "opening_hours"
-    case address = "vicinity"
   }
   struct Location: Codable {
     let location: LatLong
@@ -55,12 +62,6 @@ struct Place: Codable {
         case latitude = "lat"
         case longitude = "lng"
       }
-    }
-  }
-  struct OpenNow: Codable {
-    let open : Bool
-    enum CodingKeys : String, CodingKey {
-      case open = "open_now"
     }
   }
 }
