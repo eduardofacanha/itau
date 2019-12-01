@@ -134,17 +134,3 @@ class AgencyAdapter: NSObject {
       }
     }
   }
-  
-  class CoreDataManager: NSObject {
-    static let shared = CoreDataManager()
-    
-    private override init() { }
-    
-    func foregroundOperation(completion: @escaping (NSManagedObjectContext?) -> Void) {
-      DispatchQueue.main.async {
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        let managedContext = delegate?.persistentContainer.viewContext
-        completion(managedContext)
-      }
-    }
-}

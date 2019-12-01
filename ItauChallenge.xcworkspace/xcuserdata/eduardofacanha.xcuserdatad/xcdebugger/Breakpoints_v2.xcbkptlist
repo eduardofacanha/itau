@@ -71,16 +71,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "628CF602-647D-49C9-9DBD-B8699A77D1E5"
+            uuid = "ACE7C4B9-66E7-4D69-B8CA-D89CCBEB3668"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItauChallenge/Controller/AgencyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "fetchGoogleData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C9899B9-E1FE-4168-8764-478E79390B96"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItauChallenge/Controller/AgencyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "nextIndexPath"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "927B47BD-A9E7-4970-B240-6E903EC993C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItauChallenge/Controller/AgencyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fetchGoogleData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "927B47BD-A9E7-4970-B240-6E903EC993C8 - d5a8e4afdbc0b8ea"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;ItauChallenge.Agency&gt;) -&gt; () in closure #1 (ItauChallenge.GooglePlacesResponse) -&gt; () in ItauChallenge.AgencyViewModel.fetchGoogleData() -&gt; ()"
+                  moduleName = "ItauChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardofacanha/Library/Mobile%20Documents/com~apple~CloudDocs/Projetos/ItauChallenge/ItauChallenge/Controller/AgencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "927B47BD-A9E7-4970-B240-6E903EC993C8 - 86f77e8bc4b48155"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ItauChallenge.Agency) -&gt; () in closure #1 (Swift.Array&lt;ItauChallenge.Agency&gt;) -&gt; () in closure #1 (ItauChallenge.GooglePlacesResponse) -&gt; () in ItauChallenge.AgencyViewModel.fetchGoogleData() -&gt; ()"
+                  moduleName = "ItauChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardofacanha/Library/Mobile%20Documents/com~apple~CloudDocs/Projetos/ItauChallenge/ItauChallenge/Controller/AgencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08797505-C353-4EC5-8452-5DD79B2F0CD5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ItauChallenge/Extra/GoogleClient.swift"
+            filePath = "ItauChallenge/Controller/AgencyViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "getGooglePlaceDetails(placeID:completion:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "fetchGoogleData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5DEC072-736B-4E58-9D75-13D12ADA820C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItauChallenge/Controller/AgencyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "locationManager(_:didChangeAuthorization:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1FC9F7F-10E1-4ACE-A6B1-D3AEA359B383"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItauChallenge/Controller/AgencyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "init(delegate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "091A5F22-20DF-4CF6-8C79-A647397A866E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItauChallenge/ViewModel/AgencyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "init(delegate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

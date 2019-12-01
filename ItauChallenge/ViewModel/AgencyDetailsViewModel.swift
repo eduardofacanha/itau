@@ -1,5 +1,5 @@
 //
-//  AgencyViewController.swift
+//  AgencyDetailsViewModel.swift
 //  ItauChallenge
 //
 //  Created by Eduardo Façanha on 01/12/19.
@@ -8,26 +8,45 @@
 
 import UIKit
 
-class AgencyViewController: UIViewController {
-  
-  @IBOutlet weak private var nameLabel: UILabel!
-  @IBOutlet weak private var openHoursLabel: UITextView!
-  @IBOutlet weak private var phoneNumberLabel: UILabel!
-  public var agency: Agency? {
+protocol AgencyDetailsViewModelDelegate {
+  func fill()
+}
+
+class AgencyDetailsViewModel: NSObject {
+  lazy var googleClient: GoogleClientRequest = GoogleClient()
+  private var agency: Agency? {
     didSet {
-      fill()
+      delegate?.fill()
     }
   }
-  lazy var googleClient: GoogleClientRequest = GoogleClient()
+  private var delegate: AgencyDetailsViewModelDelegate?
   
-  override func viewDidLoad() {
+  func setDelegate(_ delegate: AgencyDetailsViewModelDelegate) {
+    self.delegate = delegate
+    delegate.fill()
     verifyAgency()
-    super.viewDidLoad()
+  }
+  
+  func setAgency(_ agency: Agency) {
+    self.agency = agency
   }
 }
 
+extension AgencyDetailsViewModel {
+  public var name: String {
+    return agency?.name ?? ""
+  }
+  
+  public var openingHours: String {
+    return agency?.openingHours?.joined(separator: "\n") ?? ""
+  }
+  
+  public var phoneNumberLabel: String {
+    return agency?.phoneNumber ?? ""
+  }
+}
 
-extension AgencyViewController {
+extension AgencyDetailsViewModel {
   
   func verifyAgency() {
     guard let agency = agency else { return }
@@ -43,20 +62,14 @@ extension AgencyViewController {
     }
   }
   
-  func fill() {
-    DispatchQueue.main.async {
-      self.nameLabel.text = self.agency?.name ?? ""
-      self.openHoursLabel.text = self.agency?.openingHours?.joined(separator: "\n") ?? ""
-      self.phoneNumberLabel.text = self.agency?.phoneNumber ?? ""
-    }
-  }
+  
   
   func fetchAgencyDetails() {
     guard let agency = agency else { return }
     googleClient.getGooglePlaceDetails(placeID: agency.placeID) { (response) in
       AgencyAdapter.updateIfNeed(agency: agency, details: response.result)
       AgencyAdapter.saveAgency(agency)
-      self.fill()
+      self.delegate?.fill()
     }
   }
 }

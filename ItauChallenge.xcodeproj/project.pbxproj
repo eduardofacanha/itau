@@ -18,6 +18,9 @@
 		3E2BDA3F239309A700C10485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2BDA3D239309A700C10485 /* LaunchScreen.storyboard */; };
 		3E2BDA4A239309A800C10485 /* ItauChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA49239309A800C10485 /* ItauChallengeTests.swift */; };
 		3E2BDA55239309A800C10485 /* ItauChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA54239309A800C10485 /* ItauChallengeUITests.swift */; };
+		3E44063823945EF900379F72 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44063723945EF900379F72 /* CoreDataManager.swift */; };
+		3E44063A23945FD900379F72 /* AgencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44063923945FD900379F72 /* AgencyViewModel.swift */; };
+		3E44063C23945FEA00379F72 /* AgencyDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44063B23945FEA00379F72 /* AgencyDetailsViewModel.swift */; };
 		3E68187A23941CCC0058BDC5 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E68187923941CCC0058BDC5 /* AgencyViewController.swift */; };
 		3E88CD4423934A290000DFBC /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E88CD4323934A290000DFBC /* ResponseModels.swift */; };
 		3E88CD4623934A350000DFBC /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E88CD4523934A340000DFBC /* GoogleClient.swift */; };
@@ -60,6 +63,9 @@
 		3E2BDA50239309A800C10485 /* ItauChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItauChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2BDA54239309A800C10485 /* ItauChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItauChallengeUITests.swift; sourceTree = "<group>"; };
 		3E2BDA56239309A800C10485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E44063723945EF900379F72 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3E44063923945FD900379F72 /* AgencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyViewModel.swift; sourceTree = "<group>"; };
+		3E44063B23945FEA00379F72 /* AgencyDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyDetailsViewModel.swift; sourceTree = "<group>"; };
 		3E68187923941CCC0058BDC5 /* AgencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyViewController.swift; sourceTree = "<group>"; };
 		3E88CD4323934A290000DFBC /* ResponseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 		3E88CD4523934A340000DFBC /* GoogleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
@@ -109,19 +115,21 @@
 		3E120DEE23930E0900A3EA53 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E2BDA33239309A200C10485 /* AgencysTableViewController.swift */,
+				3E68187923941CCC0058BDC5 /* AgencyViewController.swift */,
 				3E2BDA3D239309A700C10485 /* LaunchScreen.storyboard */,
 				3E2BDA35239309A200C10485 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		3E120DEF23930E0E00A3EA53 /* Controller */ = {
+		3E120DEF23930E0E00A3EA53 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3E2BDA33239309A200C10485 /* AgencysTableViewController.swift */,
-				3E68187923941CCC0058BDC5 /* AgencyViewController.swift */,
+				3E44063923945FD900379F72 /* AgencyViewModel.swift */,
+				3E44063B23945FEA00379F72 /* AgencyDetailsViewModel.swift */,
 			);
-			path = Controller;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3E2BDA23239309A200C10485 = {
@@ -150,7 +158,7 @@
 		3E2BDA2E239309A200C10485 /* ItauChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				3E120DEF23930E0E00A3EA53 /* Controller */,
+				3E120DEF23930E0E00A3EA53 /* ViewModel */,
 				3E120DEE23930E0900A3EA53 /* View */,
 				3E120DED23930E0100A3EA53 /* Model */,
 				3E64B53323935FD8000E2C0F /* Extra */,
@@ -184,6 +192,7 @@
 				3E2BDA31239309A200C10485 /* SceneDelegate.swift */,
 				3E88CD4523934A340000DFBC /* GoogleClient.swift */,
 				3E120DEB23930C3F00A3EA53 /* Constants.swift */,
+				3E44063723945EF900379F72 /* CoreDataManager.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -384,11 +393,14 @@
 				3E88CD4623934A350000DFBC /* GoogleClient.swift in Sources */,
 				3E120DEC23930C3F00A3EA53 /* Constants.swift in Sources */,
 				3E88CD4423934A290000DFBC /* ResponseModels.swift in Sources */,
+				3E44063A23945FD900379F72 /* AgencyViewModel.swift in Sources */,
 				3E2BDA3A239309A200C10485 /* ItauChallenge.xcdatamodeld in Sources */,
 				3E120DF123930E2200A3EA53 /* Agency.swift in Sources */,
 				3E2BDA34239309A200C10485 /* AgencysTableViewController.swift in Sources */,
 				3E68187A23941CCC0058BDC5 /* AgencyViewController.swift in Sources */,
+				3E44063C23945FEA00379F72 /* AgencyDetailsViewModel.swift in Sources */,
 				3E2BDA30239309A200C10485 /* AppDelegate.swift in Sources */,
+				3E44063823945EF900379F72 /* CoreDataManager.swift in Sources */,
 				3E2BDA32239309A200C10485 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
