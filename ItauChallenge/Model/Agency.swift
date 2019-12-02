@@ -53,7 +53,7 @@ class AgencyAdapter: NSObject {
       return agency
     }
     
-    static func saveAgency(_ agency: Agency) {
+  static func saveAgency(_ agency: Agency, completion: (() -> Void)? = nil) {
       CoreDataManager.shared.foregroundOperation { (managedContext) in
         guard let managedContext = managedContext else { return }
         managedContext.insert(agency)
@@ -64,6 +64,7 @@ class AgencyAdapter: NSObject {
             } catch {
               managedContext.redo()
             }
+            completion?()
           }
         }
         
@@ -71,6 +72,8 @@ class AgencyAdapter: NSObject {
           if let existentAgency = existentAgency {
             if update(existentAgency: existentAgency, agency: agency) {
               save()
+            } else {
+              completion?()
             }
           } else {
             save()

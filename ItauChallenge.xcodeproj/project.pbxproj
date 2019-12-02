@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3E120DEC23930C3F00A3EA53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E120DEB23930C3F00A3EA53 /* Constants.swift */; };
 		3E120DF123930E2200A3EA53 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E120DF023930E2200A3EA53 /* Agency.swift */; };
+		3E190AA223948CA10040137A /* ItauChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E190AA123948CA10040137A /* ItauChallengeTests.swift */; };
+		3E190AA423948D880040137A /* ItauChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E190AA323948D880040137A /* ItauChallengeUITests.swift */; };
 		3E2BDA30239309A200C10485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA2F239309A200C10485 /* AppDelegate.swift */; };
 		3E2BDA32239309A200C10485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA31239309A200C10485 /* SceneDelegate.swift */; };
 		3E2BDA34239309A200C10485 /* AgencysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA33239309A200C10485 /* AgencysTableViewController.swift */; };
@@ -16,8 +18,6 @@
 		3E2BDA3A239309A200C10485 /* ItauChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA38239309A200C10485 /* ItauChallenge.xcdatamodeld */; };
 		3E2BDA3C239309A700C10485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2BDA3B239309A700C10485 /* Assets.xcassets */; };
 		3E2BDA3F239309A700C10485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2BDA3D239309A700C10485 /* LaunchScreen.storyboard */; };
-		3E2BDA4A239309A800C10485 /* ItauChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA49239309A800C10485 /* ItauChallengeTests.swift */; };
-		3E2BDA55239309A800C10485 /* ItauChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDA54239309A800C10485 /* ItauChallengeUITests.swift */; };
 		3E44063823945EF900379F72 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44063723945EF900379F72 /* CoreDataManager.swift */; };
 		3E44063A23945FD900379F72 /* AgencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44063923945FD900379F72 /* AgencyViewModel.swift */; };
 		3E44063C23945FEA00379F72 /* AgencyDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44063B23945FEA00379F72 /* AgencyDetailsViewModel.swift */; };
@@ -48,6 +48,8 @@
 /* Begin PBXFileReference section */
 		3E120DEB23930C3F00A3EA53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3E120DF023930E2200A3EA53 /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
+		3E190AA123948CA10040137A /* ItauChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItauChallengeTests.swift; sourceTree = "<group>"; };
+		3E190AA323948D880040137A /* ItauChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItauChallengeUITests.swift; sourceTree = "<group>"; };
 		3E2BDA2C239309A200C10485 /* ItauChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItauChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2BDA2F239309A200C10485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E2BDA31239309A200C10485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,10 +60,8 @@
 		3E2BDA3E239309A700C10485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E2BDA40239309A700C10485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E2BDA45239309A800C10485 /* ItauChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItauChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E2BDA49239309A800C10485 /* ItauChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItauChallengeTests.swift; sourceTree = "<group>"; };
 		3E2BDA4B239309A800C10485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E2BDA50239309A800C10485 /* ItauChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItauChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E2BDA54239309A800C10485 /* ItauChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItauChallengeUITests.swift; sourceTree = "<group>"; };
 		3E2BDA56239309A800C10485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E44063723945EF900379F72 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3E44063923945FD900379F72 /* AgencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyViewModel.swift; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 		3E2BDA48239309A800C10485 /* ItauChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				3E2BDA49239309A800C10485 /* ItauChallengeTests.swift */,
 				3E2BDA4B239309A800C10485 /* Info.plist */,
+				3E190AA123948CA10040137A /* ItauChallengeTests.swift */,
 			);
 			path = ItauChallengeTests;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 		3E2BDA53239309A800C10485 /* ItauChallengeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3E2BDA54239309A800C10485 /* ItauChallengeUITests.swift */,
 				3E2BDA56239309A800C10485 /* Info.plist */,
+				3E190AA323948D880040137A /* ItauChallengeUITests.swift */,
 			);
 			path = ItauChallengeUITests;
 			sourceTree = "<group>";
@@ -292,6 +292,7 @@
 					};
 					3E2BDA4F239309A800C10485 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 						TestTargetID = 3E2BDA2B239309A200C10485;
 					};
 				};
@@ -409,7 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E2BDA4A239309A800C10485 /* ItauChallengeTests.swift in Sources */,
+				3E190AA223948CA10040137A /* ItauChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E2BDA55239309A800C10485 /* ItauChallengeUITests.swift in Sources */,
+				3E190AA423948D880040137A /* ItauChallengeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Y8S23LW8F;
 				INFOPLIST_FILE = ItauChallengeUITests/Info.plist;
@@ -666,6 +668,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = EF.ItauChallengeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ItauChallenge;
@@ -676,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Y8S23LW8F;
 				INFOPLIST_FILE = ItauChallengeUITests/Info.plist;

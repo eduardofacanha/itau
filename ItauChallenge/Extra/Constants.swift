@@ -10,9 +10,8 @@ import Foundation
 
 class Constants {
   static let googlePlacesAPIKey = "AIzaSyA7RLMRwerruCRY3Vf--gNKJwy7QjvkZSg"
-//  static let itau = "Itaú"
-  static let itau = "Padaria"
-  static let searchRadius = 2500
+  static let itau = "Itaú"
+  static let searchRadius = 5000
   
   static let scheme = "https"
   static let root = "maps.googleapis.com"

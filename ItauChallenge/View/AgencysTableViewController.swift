@@ -12,7 +12,8 @@ class AgencysTableViewController: UITableViewController {
   var viewModel: AgencyViewModel!
   
   override func viewDidLoad() {
-    viewModel = AgencyViewModel.init(delegate: self)
+    viewModel = AgencyViewModel()
+    viewModel.setDelegate(self)
     super.viewDidLoad()
   }
   
@@ -36,14 +37,7 @@ class AgencysTableViewController: UITableViewController {
 }
 
 extension AgencysTableViewController: AgencyViewModelDelegate {
-  func insert(agencys: [Agency], completion: @escaping (Agency) -> Void) {
-    var indexPaths = [IndexPath]()
-    agencys.forEach { (agency) in
-      indexPaths.append(viewModel.nextIndexPath)
-      completion(agency)
-    }
-    DispatchQueue.main.async {
-      self.tableView.insertRows(at: indexPaths, with: .automatic)
-    }
+  func reload() {
+    tableView.reloadData()
   }
 }

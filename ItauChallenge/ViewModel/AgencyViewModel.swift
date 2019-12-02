@@ -10,7 +10,7 @@ import Foundation
 import GooglePlaces
 
 protocol AgencyViewModelDelegate {
-  func insert(agencys: [Agency], completion: @escaping (Agency) -> Void)
+  func reload()
 }
 
 class AgencyViewModel: NSObject {
@@ -21,10 +21,9 @@ class AgencyViewModel: NSObject {
   private let locationManager = CLLocationManager()
   private var dataSource = [Agency]()
   
-  private var delegate: AgencyViewModelDelegate
+  private var delegate: AgencyViewModelDelegate?
   
-  init(delegate: AgencyViewModelDelegate) {
-    self.delegate = delegate
+  override init() {
     super.init()
     locationManager.delegate = self
     let status = CLLocationManager.authorizationStatus()
@@ -33,15 +32,18 @@ class AgencyViewModel: NSObject {
     }
   }
   
+  func setDelegate(_ delegate: AgencyViewModelDelegate) {
+    self.delegate = delegate
+  }
+  
   func fetchGoogleData() {
     guard let location = locationManager.location else { return }
     googleClient.getGooglePlacesData(keyword: Constants.itau,
                                      location: location,
                                      radius: Constants.searchRadius) { (response) in
                                       AgencyAdapter.createAgencys(places: response.results) { agencys in
-                                        self.delegate.insert(agencys: agencys) {agency in
-                                          self.dataSource.append(agency)
-                                        }
+                                        self.dataSource.append(contentsOf: agencys)
+                                        self.delegate?.reload()
                                       }
     }
   }
@@ -60,7 +62,7 @@ extension AgencyViewModel {
   }
   
   public var nextIndexPath: IndexPath {
-    return IndexPath.init(row: numberOfRows, section: 0)
+    return IndexPath.init(row: numberOfRows - 1, section: 0)
   }
 }
 
