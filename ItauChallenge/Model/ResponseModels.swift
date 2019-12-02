@@ -19,22 +19,22 @@ struct GooglePlaceDetailsResponse : Codable {
   enum CodingKeys: CodingKey {
     case result
   }
+}
+
+struct Details: Codable {
+  let openingHours: OpeningHours?
+  let phoneNumber: String?
   
-  struct Details: Codable {
-    let openingHours: OpeningHours?
-    let phoneNumber: String?
+  enum CodingKeys: String, CodingKey {
+    case phoneNumber = "formatted_phone_number"
+    case openingHours = "opening_hours"
+  }
+  
+  struct OpeningHours: Codable {
+    let weekday: [String]?
     
     enum CodingKeys: String, CodingKey {
-      case phoneNumber = "formatted_phone_number"
-      case openingHours = "opening_hours"
-    }
-    
-    struct OpeningHours: Codable {
-      let weekday: [String]?
-      
-      enum CodingKeys: String, CodingKey {
-        case weekday = "weekday_text"
-      }
+      case weekday = "weekday_text"
     }
   }
 }

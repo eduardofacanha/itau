@@ -128,7 +128,7 @@ class AgencyAdapter: NSObject {
       return hasChange
     }
     
-    static func updateIfNeed(agency: Agency, details: GooglePlaceDetailsResponse.Details) {
+    static func updateIfNeed(agency: Agency, details: Details) {
       if let openingHours = details.openingHours?.weekday {
         agency.openingHours = Set<String>.init(openingHours)
       }

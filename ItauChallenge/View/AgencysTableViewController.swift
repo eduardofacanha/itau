@@ -40,4 +40,12 @@ extension AgencysTableViewController: AgencyViewModelDelegate {
   func reload() {
     tableView.reloadData()
   }
+  func connectionError() {
+    let alertController = UIAlertController.init(title: "Network connection failed",
+                                                 message: "Check your connection and try again", preferredStyle: .alert)
+    alertController.addAction(.init(title: "ok", style: .default, handler: nil))
+    DispatchQueue.main.async {
+      self.present(alertController, animated: true, completion: nil)
+    }
+  }
 }

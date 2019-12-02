@@ -17,5 +17,5 @@ class Constants {
   static let root = "maps.googleapis.com"
   static let detailsPath = "/maps/api/place/details/json"
   static let searchPath = "/maps/api/place/nearbysearch/json"
-  
+  static let timeOut: TimeInterval = 30
 }

@@ -29,7 +29,8 @@ class ItauChallengTests: XCTestCase {
     guard let location = locationManager.location else { return XCTFail("Witouth User Location")}
     let creationPromise = self.expectation(description: "Creation of Agencys")
     let getPromise = self.expectation(description: "Restore the created Agencys")
-    googleClient.getGooglePlacesData(keyword: Constants.itau, location: location, radius: Constants.searchRadius) { (response) in
+    googleClient.getGooglePlacesData(keyword: Constants.itau, location: location, radius: Constants.searchRadius) { (response, error) in
+      guard let response = response else { return XCTFail("Fail on retrieve Agencys")}
       let resultsCount = response.results.count
       var creationCount = 0
       
@@ -73,7 +74,8 @@ class ItauChallengTests: XCTestCase {
     injectionPromisse = self.expectation(description: "Load Agencys from WebService")
     viewModelPromisse = self.expectation(description: "Load Agencys from viewModel")
     viewModel.setDelegate(self)
-    googleClient.getGooglePlacesData(keyword: Constants.itau, location: location, radius: Constants.searchRadius) { (response) in
+    googleClient.getGooglePlacesData(keyword: Constants.itau, location: location, radius: Constants.searchRadius) { (response, error) in
+      guard let response = response else { return XCTFail("Fail on retrieve Details")}
       self.results = response.results
       self.injectionPromisse?.fulfill()
     }
@@ -84,6 +86,8 @@ class ItauChallengTests: XCTestCase {
 }
 
 extension ItauChallengTests: AgencyViewModelDelegate {
+  func connectionError() { }
+  
   func reload() {
     viewModelPromisse?.fulfill()
   }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol AgencyDetailsViewModelDelegate {
   func fill()
+  func connectionError()
 }
 
 class AgencyDetailsViewModel: NSObject {
@@ -66,10 +67,14 @@ extension AgencyDetailsViewModel {
   
   func fetchAgencyDetails() {
     guard let agency = agency else { return }
-    googleClient.getGooglePlaceDetails(placeID: agency.placeID) { (response) in
-      AgencyAdapter.updateIfNeed(agency: agency, details: response.result)
-      AgencyAdapter.saveAgency(agency)
-      self.delegate?.fill()
+    googleClient.getGooglePlaceDetails(placeID: agency.placeID) { response, error  in
+      if let _ = error {
+        self.delegate?.connectionError()
+      } else if let response = response {
+        AgencyAdapter.updateIfNeed(agency: agency, details: response.result)
+        AgencyAdapter.saveAgency(agency)
+        self.delegate?.fill()
+      }
     }
   }
 }

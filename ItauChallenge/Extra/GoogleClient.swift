@@ -15,57 +15,59 @@ protocol GoogleClientRequest {
   func getGooglePlacesData(keyword: String,
                            location: CLLocation,
                            radius: Int,
-                           completionHandler: @escaping (GooglePlacesResponse) -> Void)
-  func getGooglePlaceDetails(placeID: String, completion: @escaping (GooglePlaceDetailsResponse) -> Void)
+                           completion: @escaping (GooglePlacesResponse?, Error?) -> Void)
+  func getGooglePlaceDetails(placeID: String, completion: @escaping (GooglePlaceDetailsResponse?, Error?) -> Void)
   
 }
 
 class GoogleClient: GoogleClientRequest {
   
-  let session = URLSession(configuration: .default)
+  private let session: URLSession = {
+    let config: URLSessionConfiguration = .default
+    config.timeoutIntervalForRequest = Constants.timeOut
+    config.timeoutIntervalForResource = Constants.timeOut
+    return URLSession.init(configuration: config)
+  }()
   
-  var googlePlacesKey: String = Constants.googlePlacesAPIKey
+  internal var googlePlacesKey: String = Constants.googlePlacesAPIKey
   
-  func getGooglePlacesData(keyword: String,
+  public func getGooglePlacesData(keyword: String,
                            location: CLLocation,
                            radius: Int,
-                           completionHandler: @escaping (GooglePlacesResponse) -> Void)  {
+                           completion: @escaping (GooglePlacesResponse?, Error?) -> Void)  {
     
     let url = googlePlacesDataURL(apiKey: googlePlacesKey, location: location, keyword: keyword)
     let task = session.dataTask(with: url) { (data, _, error) in
       if let error = error {
-        print(error.localizedDescription)
-        return
+        completion(nil, error)
       }
       guard let data = data,
         let response = try? JSONDecoder().decode(GooglePlacesResponse.self, from: data) else {
-          completionHandler(GooglePlacesResponse(results:[]))
+          completion(GooglePlacesResponse(results:[]), nil)
           return
       }
-      completionHandler(response)
+      completion(response, error)
     }
     task.resume()
   }
   
-  func getGooglePlaceDetails(placeID: String, completion: @escaping (GooglePlaceDetailsResponse) -> Void) {
+  public func getGooglePlaceDetails(placeID: String, completion: @escaping (GooglePlaceDetailsResponse?, Error?) -> Void) {
+    
     let url = googlePlaceDetailsURL(apiKey: googlePlacesKey, placeID: placeID)
-    
-    let request = URLRequest.init(url: url)
-    
-    let task = URLSession.shared.dataTask(with: request) { data, _, error in
+
+    let task = session.dataTask(with: url) { data, _, error in
       if let error = error {
-        print(error.localizedDescription)
-        return
+        completion(nil, error)
       }
       guard let data = data,
         let response = try? JSONDecoder().decode(GooglePlaceDetailsResponse.self, from: data) else { return }
-      completion(response)
+      completion(response, error)
     }
     
     task.resume()
   }
   
-  func googlePlacesDataURL(apiKey: String, location: CLLocation, keyword: String) -> URL {
+  private func googlePlacesDataURL(apiKey: String, location: CLLocation, keyword: String) -> URL {
     let locationString = String(location.coordinate.latitude) + "," + String(location.coordinate.longitude)
     var urlComponents = URLComponents()
        urlComponents.scheme = Constants.scheme
@@ -80,7 +82,7 @@ class GoogleClient: GoogleClientRequest {
   }
   
   // create the URL to request a JSON from Google
-  func googlePlaceDetailsURL(apiKey: String, placeID: String) -> URL {
+  private func googlePlaceDetailsURL(apiKey: String, placeID: String) -> URL {
     var urlComponents = URLComponents()
        urlComponents.scheme = Constants.scheme
        urlComponents.host = Constants.root

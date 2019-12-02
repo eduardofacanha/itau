@@ -11,6 +11,7 @@ import GooglePlaces
 
 protocol AgencyViewModelDelegate {
   func reload()
+  func connectionError()
 }
 
 class AgencyViewModel: NSObject {
@@ -40,10 +41,14 @@ class AgencyViewModel: NSObject {
     guard let location = locationManager.location else { return }
     googleClient.getGooglePlacesData(keyword: Constants.itau,
                                      location: location,
-                                     radius: Constants.searchRadius) { (response) in
-                                      AgencyAdapter.createAgencys(places: response.results) { agencys in
-                                        self.dataSource.append(contentsOf: agencys)
-                                        self.delegate?.reload()
+                                     radius: Constants.searchRadius) { response, error  in
+                                      if let _ = error {
+                                        self.delegate?.connectionError()
+                                      } else if let response = response {
+                                        AgencyAdapter.createAgencys(places: response.results) { agencys in
+                                          self.dataSource.append(contentsOf: agencys)
+                                          self.delegate?.reload()
+                                        }
                                       }
     }
   }
